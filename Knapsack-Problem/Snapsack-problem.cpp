@@ -2,7 +2,7 @@
 #include <algorithm>
 using namespace std;
 
-int maximo (int temp1, int temp2, int n)
+int maximo (int temp1, int temp2)
 {
     if(temp1 > temp2)
     {
@@ -27,7 +27,7 @@ int ks (int* w, int* v, int n, int c)
     {
       temp1 = ks(w,v, n-1, c);
       temp2 = v[n] + ks(w,v,n-1,c-w[n]);
-      result = maximo(temp1, temp2,n);
+      result = maximo(temp1, temp2);
     }
      return result;
 }
@@ -43,4 +43,3 @@ int main(void)
     std::cout<<"MAX = " <<ks(w,v,n,capacidade) <<endl;
 
 }
-
